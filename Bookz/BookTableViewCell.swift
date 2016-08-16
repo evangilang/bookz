@@ -11,5 +11,10 @@ import UIKit
 class BookTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var authorLabel: UILabel!
+    @IBOutlet var publisherLabel: UILabel!
+    @IBOutlet var codeLabel: UILabel!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var stockLabel: UILabel!
+    @IBOutlet var yearLabel: UILabel!
     
 }

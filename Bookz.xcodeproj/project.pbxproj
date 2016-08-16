@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		088F1ACA1D5D31E900934695 /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F1AC91D5D31E900934695 /* BookTableViewController.swift */; };
+		08E2618D1D62BF7F00988339 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E2618C1D62BF7F00988339 /* BookViewController.swift */; };
 		08EC66611D5ADCB800AB5FB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC66601D5ADCB800AB5FB8 /* AppDelegate.swift */; };
 		08EC66631D5ADCB800AB5FB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC66621D5ADCB800AB5FB8 /* ViewController.swift */; };
 		08EC66661D5ADCB800AB5FB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08EC66641D5ADCB800AB5FB8 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		088F1AC91D5D31E900934695 /* BookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
+		08E2618C1D62BF7F00988339 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		08EC665D1D5ADCB800AB5FB8 /* Bookz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08EC66601D5ADCB800AB5FB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08EC66621D5ADCB800AB5FB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				08F0535D1D5C38CA003BB6A7 /* Buku.swift */,
 				08F0535F1D5C3B21003BB6A7 /* BookTableViewCell.swift */,
 				088F1AC91D5D31E900934695 /* BookTableViewController.swift */,
+				08E2618C1D62BF7F00988339 /* BookViewController.swift */,
 			);
 			path = Bookz;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				088F1ACA1D5D31E900934695 /* BookTableViewController.swift in Sources */,
 				08F053601D5C3B21003BB6A7 /* BookTableViewCell.swift in Sources */,
 				08F0535E1D5C38CA003BB6A7 /* Buku.swift in Sources */,
+				08E2618D1D62BF7F00988339 /* BookViewController.swift in Sources */,
 				08EC66631D5ADCB800AB5FB8 /* ViewController.swift in Sources */,
 				08EC66611D5ADCB800AB5FB8 /* AppDelegate.swift in Sources */,
 			);

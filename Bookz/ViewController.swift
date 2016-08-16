@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //var tableView: UITableView!
     var books = [Buku]()
     var book: Buku?
-    
+    /*
     func ambilData() {
         let url = NSURL(string: "http://bukuapi.azurewebsites.net/api/buku")
         NSURLSession.sharedSession().dataTaskWithURL(url!) { (data, response, error) in
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }.resume()
         
     }
-    
+    */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(books.count)
         return books.count
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        ambilData()
+        //ambilData()
         /*dispatch_async(dispatch_get_main_queue(), {
             self.tableView.reloadData()
         })*/
