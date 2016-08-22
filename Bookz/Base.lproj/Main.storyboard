@@ -189,7 +189,7 @@
                     <navigationItem key="navigationItem" title="Bookz" id="Vn6-vi-QIN">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Y9U-qT-XYt">
                             <connections>
-                                <segue destination="Pe1-I8-5GZ" kind="show" id="zzw-1r-1Fi"/>
+                                <segue destination="yVM-wR-YaK" kind="show" id="zzw-1r-1Fi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -210,32 +210,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaJ-v3-qoB">
-                                <rect key="frame" x="30" y="285" width="540" height="30"/>
-                                <color key="backgroundColor" red="0.24847316890000001" green="0.77445930819999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Qp9-yr-N1D"/>
-                                </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="postData:" destination="Pe1-I8-5GZ" eventType="touchUpInside" id="9wX-9A-u7R"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="ghh-Y4-aNS">
+                                <rect key="frame" x="70" y="168" width="460" height="264"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kode Buku" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ie-dN-GKz">
+                                        <rect key="frame" x="0.0" y="0.0" width="460" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Judul Buku" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ln0-da-RNM">
+                                        <rect key="frame" x="0.0" y="39" width="460" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Pengarang" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HuZ-CG-cxP">
+                                        <rect key="frame" x="0.0" y="78" width="460" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Penerbit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AIK-Cc-4Ut">
+                                        <rect key="frame" x="0.0" y="117" width="460" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tahun Terbit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iw-hv-yH9">
+                                        <rect key="frame" x="0.0" y="156" width="460" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Stok Barang" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9qq-a2-ZH7">
+                                        <rect key="frame" x="0.0" y="195" width="460" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Harga Buku" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJG-dQ-I2g">
+                                        <rect key="frame" x="0.0" y="234" width="460" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZaJ-v3-qoB" firstAttribute="leading" secondItem="tbX-QO-QDh" secondAttribute="leadingMargin" constant="10" id="2Ee-TO-iXV"/>
-                            <constraint firstItem="ZaJ-v3-qoB" firstAttribute="centerY" secondItem="tbX-QO-QDh" secondAttribute="centerY" id="BLR-gc-Wys"/>
-                            <constraint firstItem="ZaJ-v3-qoB" firstAttribute="centerX" secondItem="tbX-QO-QDh" secondAttribute="centerX" id="KFA-Yf-cCF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZaJ-v3-qoB" secondAttribute="trailing" constant="10" id="nvu-lh-VZw"/>
+                            <constraint firstItem="ghh-Y4-aNS" firstAttribute="centerY" secondItem="tbX-QO-QDh" secondAttribute="centerY" id="H63-3r-uFz"/>
+                            <constraint firstItem="ghh-Y4-aNS" firstAttribute="centerY" secondItem="tbX-QO-QDh" secondAttribute="centerY" id="TZB-8Q-5uj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ghh-Y4-aNS" secondAttribute="trailing" constant="50" id="VPQ-C5-aM5"/>
+                            <constraint firstItem="ghh-Y4-aNS" firstAttribute="leading" secondItem="tbX-QO-QDh" secondAttribute="leadingMargin" constant="50" id="uOA-TF-cZP"/>
+                            <constraint firstItem="ghh-Y4-aNS" firstAttribute="centerX" secondItem="tbX-QO-QDh" secondAttribute="centerX" id="wLE-8a-6wh"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rXG-eR-rW9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nll-Nk-ZOb">
+                            <connections>
+                                <action selector="saveButton:" destination="Pe1-I8-5GZ" id="eVR-TO-tc5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bookAuthorTextField" destination="HuZ-CG-cxP" id="VUP-s1-j1R"/>
+                        <outlet property="bookCodeTextField" destination="5ie-dN-GKz" id="Uqg-mw-2FO"/>
+                        <outlet property="bookPriceTextField" destination="lJG-dQ-I2g" id="lyD-Kg-9G4"/>
+                        <outlet property="bookPublisherTextField" destination="AIK-Cc-4Ut" id="Xrb-ds-8dW"/>
+                        <outlet property="bookStockTextField" destination="9qq-a2-ZH7" id="QfY-Tl-iUa"/>
+                        <outlet property="bookTitleTextField" destination="Ln0-da-RNM" id="AqW-oT-6yd"/>
+                        <outlet property="bookYearPublishedTextField" destination="8iw-hv-yH9" id="c6W-pg-89G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eau-US-wKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584" y="259"/>
+            <point key="canvasLocation" x="3396" y="259"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xgk-EX-gsX">
@@ -254,6 +298,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcQ-11-8vy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1018" y="286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SiY-rX-7cu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yVM-wR-YaK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mYf-9v-S1K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pe1-I8-5GZ" kind="relationship" relationship="rootViewController" id="MMN-dN-BwM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rrM-ju-Ctu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2584" y="259"/>
         </scene>
     </scenes>
 </document>

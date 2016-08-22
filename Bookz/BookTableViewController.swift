@@ -84,10 +84,52 @@ class BookTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         print("heyho")
-        ambilData()
-    }
+            }
     override func viewDidLoad() {
         super.viewDidLoad()
+        ambilData()
+
+    }
+    
+    func unwindToBookList() {
+        dispatch_async(dispatch_get_main_queue()) { 
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let selectedBook = books[indexPath.row]
+            let selectedCode = selectedBook.code
+            print(selectedCode)
+            let url = NSURL(string: "http://bukuapi.azurewebsites.net/api/buku/\(selectedCode)")
+            let session = NSURLSession.sharedSession()
+            let request = NSMutableURLRequest(URL: url!)
+            request.HTTPMethod = "DELETE"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
+                if let error = error {
+                    print(error)
+                }
+                if let response = response {
+                    let nsHTTPResponse = response as! NSHTTPURLResponse
+                    let statusCode = nsHTTPResponse.statusCode
+                    print("status code = \(statusCode)")
+                }
+                
+                if let data = data {
+                    do {
+                        let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
+                        print("data = \(jsonResponse)")
+                    } catch _ {
+                        print("oops")
+                    }
+                }
+            })
+            task.resume()
+            books.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
     }
     
     

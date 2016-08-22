@@ -10,24 +10,40 @@ import UIKit
 
 class BookViewController: UIViewController {
     
+    @IBOutlet var bookCodeTextField: UITextField!
+    @IBOutlet var bookTitleTextField: UITextField!
+    @IBOutlet var bookAuthorTextField: UITextField!
+    @IBOutlet var bookPublisherTextField: UITextField!
+    @IBOutlet var bookYearPublishedTextField: UITextField!
+    @IBOutlet var bookStockTextField: UITextField!
+    @IBOutlet var bookPriceTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+   
     
-    @IBAction func postData(sender: AnyObject) {
+    @IBAction func saveButton(sender: AnyObject) {
+        let bookCode = bookCodeTextField.text
+        let bookTitle = bookTitleTextField.text
+        let bookAuthor = bookAuthorTextField.text
+        let bookPublisher = bookPublisherTextField.text
+        let bookYearPublished = Int(bookYearPublishedTextField.text!)
+        let bookStock = Int(bookStockTextField.text!)
+        let bookPrice = Int(bookPriceTextField.text!)
         let session = NSURLSession.sharedSession()
         let url = "http://bukuapi.azurewebsites.net/api/buku"
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-type")
-        let params:[String:AnyObject] = ["kode_buku": "swft002",
-                                         "judul_buku": "Swifty Book #2",
-                                         "pengarang": "Evan Gilang Ramadhan",
-                                         "penerbit": "insan madani",
-                                         "tahun": 2016,
-                                         "stok": 5,
-                                         "harga": 65000]
+        let params:[String:AnyObject] = ["kode_buku": bookCode!,
+                                         "judul_buku": bookTitle!,
+                                         "pengarang": bookAuthor!,
+                                         "penerbit": bookPublisher!,
+                                         "tahun": bookYearPublished!,
+                                         "stok": bookStock!,
+                                         "harga": bookPrice!]
         do {
             request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions())
             let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
@@ -54,6 +70,8 @@ class BookViewController: UIViewController {
         } catch _ {
             print("something happened")
         }
-        
+        dismissViewControllerAnimated(true, completion: nil)
     }
+
+    
 }
